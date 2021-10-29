@@ -47,6 +47,10 @@
             </feature>
         </config-file>
 
+        <config-file target="*-Info.plist" parent="RadarPublishableKey">
+            <string>$PUBLISHABLE_KEY</string>
+        </config-file>
+
         <preference name="NS_LOCATION_WHEN_IN_USE_USAGE_DESCRIPTION" default="This app uses your location for geofencing." />
         <config-file target="*-Info.plist" parent="NSLocationWhenInUseUsageDescription">
             <string>$NS_LOCATION_WHEN_IN_USE_USAGE_DESCRIPTION</string>
@@ -64,6 +68,14 @@
 
         <header-file src="src/ios/CDVRadar.h"/>
         <source-file src="src/ios/CDVRadar.m"/>
-        <framework src="RadarSDK" type="podspec" spec="3.1.8"/>
+        
+        <podspec>
+            <config>
+                <source url="https://cdn.cocoapods.org/"/>
+            </config>
+            <pods use-frameworks="true">
+                <pod name="RadarSDK" spec="~> 3.2.0"/>
+            </pods>
+        </podspec>
     </platform>
 </plugin>
