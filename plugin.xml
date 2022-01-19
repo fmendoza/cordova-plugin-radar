@@ -41,10 +41,14 @@
             <uses-permission android:name="android.permission.BLUETOOTH_ADMIN" />
         </config-file>
 
+        <config-file target="AndroidManifest.xml" parent="/*">
+            <uses-permission android:name="android.permission.RECEIVE_BOOT_COMPLETED" />
+        </config-file>
+
         <source-file src="src/android/RadarCordovaPlugin.java" target-dir="src/io/radar/cordova"/>
         <source-file src="src/android/RadarForegroundService.java" target-dir="src/io/radar/cordova"/>
 
-        <framework src="io.radar:sdk:3.2.3"/>
+        <framework src="io.radar:sdk:3.2.5"/>
 
     </platform>
     <platform name="ios">
@@ -82,7 +86,7 @@
                 <source url="https://cdn.cocoapods.org/"/>
             </config>
             <pods use-frameworks="true">
-                <pod name="RadarSDK" spec="~> 3.2.1"/>
+                <pod name="RadarSDK" spec="~> 3.2.3"/>
             </pods>
         </podspec>
     </platform>
