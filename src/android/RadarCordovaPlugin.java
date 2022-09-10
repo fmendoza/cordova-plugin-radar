@@ -381,7 +381,7 @@ public class RadarCordovaPlugin extends CordovaPlugin {
 
     public void startTrackingResponsive(final JSONArray args, final CallbackContext callbackContext) throws JSONException {
         RadarTrackingOptions trackingOptions = RadarTrackingOptions.RESPONSIVE;
-        trackingOptions.beacons = true;
+        trackingOptions.setBeacons(true);
         Radar.startTracking(trackingOptions);
 
         callbackContext.sendPluginResult(new PluginResult(PluginResult.Status.OK));
