@@ -56,7 +56,7 @@ public class RadarCordovaPlugin extends CordovaPlugin {
       if (publishableKey == null || TextUtils.isEmpty(publishableKey)) {
           Log.e("RadarCordovaPlugin", "Radar could not initialize. Did you configure the PUBLISHABLE_KEY preference?");
       } else {
-          Radar.initialize(cordova.getActivity().getApplicationContext(), publishableKey, new RadarCordovaReceiver());
+          Radar.initialize(cordova.getActivity().getApplicationContext(), publishableKey, new RadarCordovaReceiver(), Radar.RadarLocationServicesProvider.GOOGLE);
       }
 
     }
